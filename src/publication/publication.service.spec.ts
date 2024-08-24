@@ -4,7 +4,7 @@ describe('PublicationService', () => {
 	const publicationService = new PublicationService()
 
 	it('should create a publication', async () => {
-		const testPublication = await publicationService.createPublication({
+		const testPublication = await publicationService.create({
 			title: 'Test title',
 			description: 'Test string'
 		})
