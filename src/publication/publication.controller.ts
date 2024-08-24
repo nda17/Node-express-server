@@ -1,15 +1,25 @@
+import { PublicationService } from '@/publication/publication.service'
 import { Router } from 'express'
-import { PublicationService } from './publication.service'
 
 const router = Router()
 
 const publicationService = new PublicationService()
 
-router.post('/publication', (request, response) => {
-	if (!request.body?.text?.length) {
-		return response.status(400).json({ message: 'Message is required' })
+router.post('/publication', async (request, response) => {
+	if (!request.body?.title?.length) {
+		return response.status(400).json({ message: 'Title is required' })
 	}
-	const publication = publicationService.createPublication(request.body)
+
+	if (!request.body?.description?.length) {
+		return response
+			.status(400)
+			.json({ message: 'Description is required' })
+	}
+
+	const publication = await publicationService.createPublication(
+		request.body
+	)
+
 	response.status(200).json(publication)
 })
 
