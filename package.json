@@ -1,5 +1,5 @@
 {
-	"name": "blog-back-end",
+	"name": "express.js-server",
 	"version": "0.1.0",
 	"description": "",
 	"main": "server.ts",
