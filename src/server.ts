@@ -3,6 +3,7 @@ import logger from '@/utils/log'
 import { PrismaClient } from '@prisma/client'
 import 'colors'
 import compression from 'compression'
+import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
 import helmet from 'helmet'
@@ -12,9 +13,10 @@ const app = express()
 const prisma = new PrismaClient()
 
 const main = async () => {
+	app.use(logger)
+	app.use(cors())
 	app.use(helmet())
 	app.use(compression())
-	app.use(logger)
 	app.use(express.json())
 	app.use('/api/publication', publicationRouter)
 	app.all('*', (request, response) => {
