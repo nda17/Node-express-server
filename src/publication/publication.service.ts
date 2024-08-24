@@ -13,7 +13,7 @@ export class PublicationService {
 		}
 	}
 
-	create(publication: IPublication): Promise<Publication> {
+	async create(publication: IPublication): Promise<Publication> {
 		try {
 			return this.prisma.publication.create({
 				data: publication
@@ -21,6 +21,23 @@ export class PublicationService {
 		} catch (error) {
 			console.error(error)
 			throw new Error('Error while creating publication')
+		}
+	}
+
+	async update(request: IPublication) {
+		try {
+			return this.prisma.publication.update({
+				where: {
+					id: request.id
+				},
+				data: {
+					title: request.title,
+					description: request.description
+				}
+			})
+		} catch (error) {
+			console.error(error)
+			throw new Error('Publication not found')
 		}
 	}
 }
