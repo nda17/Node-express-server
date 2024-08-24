@@ -3,10 +3,14 @@ import { PublicationService } from '@/publication/publication.service'
 import { Router } from 'express'
 
 const router = Router()
-
 const publicationService = new PublicationService()
 
-router.post('/publication', async (request, response) => {
+router.get('/', async (request, response) => {
+	const data = await publicationService.getAll()
+	response.json(data)
+})
+
+router.post('/', async (request, response) => {
 	const validation = createPublicationDto.safeParse(request.body)
 
 	if (!validation.success) {
