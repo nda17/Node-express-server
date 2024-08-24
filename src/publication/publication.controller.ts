@@ -1,3 +1,4 @@
+import { createPublicationDto } from '@/publication/publication.dto'
 import { PublicationService } from '@/publication/publication.service'
 import { Router } from 'express'
 
@@ -6,14 +7,10 @@ const router = Router()
 const publicationService = new PublicationService()
 
 router.post('/publication', async (request, response) => {
-	if (!request.body?.title?.length) {
-		return response.status(400).json({ message: 'Title is required' })
-	}
+	const validation = createPublicationDto.safeParse(request.body)
 
-	if (!request.body?.description?.length) {
-		return response
-			.status(400)
-			.json({ message: 'Description is required' })
+	if (!validation.success) {
+		return response.status(400).json({ message: validation.error.errors })
 	}
 
 	const publication = await publicationService.createPublication(
