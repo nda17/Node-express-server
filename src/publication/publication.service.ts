@@ -5,10 +5,15 @@ export class PublicationService {
 	private prisma = new PrismaClient()
 
 	async getAll(): Promise<IPublication[]> {
-		return this.prisma.publication.findMany()
+		try {
+			return this.prisma.publication.findMany()
+		} catch (error) {
+			console.error(error)
+			throw new Error('Error when requesting all publications')
+		}
 	}
 
-	createPublication(publication: IPublication): Promise<Publication> {
+	create(publication: IPublication): Promise<Publication> {
 		try {
 			return this.prisma.publication.create({
 				data: publication
