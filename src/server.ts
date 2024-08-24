@@ -16,7 +16,7 @@ const main = async () => {
 	app.use(compression())
 	app.use(logger)
 	app.use(express.json())
-	app.use('/api', publicationRouter)
+	app.use('/api/publication', publicationRouter)
 	app.all('*', (request, response) => {
 		response.status(404).json({ message: 'Not found' })
 	})
