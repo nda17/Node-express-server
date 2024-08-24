@@ -14,6 +14,9 @@ importers:
       compression:
         specifier: ^1.7.4
         version: 1.7.4
+      cors:
+        specifier: ^2.8.5
+        version: 2.8.5
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -33,6 +36,9 @@ importers:
       '@types/compression':
         specifier: ^1.7.5
         version: 1.7.5
+      '@types/cors':
+        specifier: ^2.8.17
+        version: 2.8.17
       '@types/express':
         specifier: ^4.17.21
         version: 4.17.21
@@ -45,12 +51,18 @@ importers:
       '@types/node':
         specifier: ^22.5.0
         version: 22.5.0
+      '@types/prettier':
+        specifier: ^3.0.0
+        version: 3.0.0
       colors:
         specifier: ^1.4.0
         version: 1.4.0
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.5.0)(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4))
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
       prisma:
         specifier: ^5.18.0
         version: 5.18.0
@@ -410,6 +422,9 @@ packages:
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
 
+  '@types/cors@2.8.17':
+    resolution: {integrity: sha512-8CGDvrBj1zgo2qE+oS3pOCyYNqCPryMWY2bGfwA0dcfopWGgxs+78df0Rs3rc9THP4JkOhLsAa+15VdpAqkcUA==}
+
   '@types/express-serve-static-core@4.19.5':
     resolution: {integrity: sha512-y6W03tvrACO72aijJ5uF02FRq5cgDR9lUxddQ8vyF+GvmjJQqbzDcJngEjURc+ZsG31VI3hODNZJ2URj86pzmg==}
 
@@ -442,6 +457,10 @@ packages:
 
   '@types/node@22.5.0':
     resolution: {integrity: sha512-DkFrJOe+rfdHTqqMg0bSNlGlQ85hSoh2TPzZyhHsXnMtligRWpxUySiyw8FY14ITt24HVCiQPWxS3KO/QlGmWg==}
+
+  '@types/prettier@3.0.0':
+    resolution: {integrity: sha512-mFMBfMOz8QxhYVbuINtswBp9VL2b4Y0QqYHwqLz3YbgtfAcat2Dl6Y1o4e22S/OVE6Ebl9m7wWiMT2lSbAs1wA==}
+    deprecated: This is a stub types definition. prettier provides its own type definitions, so you do not need this installed.
 
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
@@ -706,6 +725,10 @@ packages:
 
   cookiejar@2.1.4:
     resolution: {integrity: sha512-LDx6oHrK+PhzLKJU9j5S7/Y3jM/mUHvD/DeI1WQmJn652iPC5Y4TBzC9l+5OMOXlyTTA+SmVUPm0HQUwpD5Jqw==}
+
+  cors@2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
 
   create-jest@29.7.0:
     resolution: {integrity: sha512-Adz2bdH0Vq3F53KEMJOoftQFutWCukm6J24wbPWRO4k1kMY7gS7ds/uoJkNuV8wDCtWWnuwGcJwpWcih+zEW1Q==}
@@ -1349,6 +1372,10 @@ packages:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
 
+  object-assign@4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
+
   object-inspect@1.13.2:
     resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
     engines: {node: '>= 0.4'}
@@ -1428,6 +1455,11 @@ packages:
   pkg-dir@4.2.0:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
+
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   pretty-format@29.7.0:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
@@ -2281,6 +2313,10 @@ snapshots:
     dependencies:
       '@types/node': 22.5.0
 
+  '@types/cors@2.8.17':
+    dependencies:
+      '@types/node': 22.5.0
+
   '@types/express-serve-static-core@4.19.5':
     dependencies:
       '@types/node': 22.5.0
@@ -2325,6 +2361,10 @@ snapshots:
   '@types/node@22.5.0':
     dependencies:
       undici-types: 6.19.8
+
+  '@types/prettier@3.0.0':
+    dependencies:
+      prettier: 3.3.3
 
   '@types/qs@6.9.15': {}
 
@@ -2619,6 +2659,11 @@ snapshots:
   cookie@0.6.0: {}
 
   cookiejar@2.1.4: {}
+
+  cors@2.8.5:
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
 
   create-jest@29.7.0(@types/node@22.5.0)(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)):
     dependencies:
@@ -3412,6 +3457,8 @@ snapshots:
     dependencies:
       path-key: 3.1.1
 
+  object-assign@4.1.1: {}
+
   object-inspect@1.13.2: {}
 
   on-finished@2.3.0:
@@ -3474,6 +3521,8 @@ snapshots:
   pkg-dir@4.2.0:
     dependencies:
       find-up: 4.1.0
+
+  prettier@3.3.3: {}
 
   pretty-format@29.7.0:
     dependencies:
