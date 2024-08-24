@@ -13,6 +13,24 @@ export class PublicationService {
 		}
 	}
 
+	async getById(request: IPublication) {
+		try {
+			return this.prisma.publication.findUnique({
+				where: {
+					id: request.id
+				},
+				select: {
+					id: true,
+					title: true,
+					description: true
+				}
+			})
+		} catch (error) {
+			console.error(error)
+			throw new Error('Error when requesting publication')
+		}
+	}
+
 	async create(publication: IPublication): Promise<Publication> {
 		try {
 			return this.prisma.publication.create({

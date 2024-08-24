@@ -11,6 +11,12 @@ router.get('/', async (request, response) => {
 	response.json(data)
 })
 
+router.get('/:id', async (request, response) => {
+	const data = await publicationService.getById(request.body)
+
+	response.json(data)
+})
+
 router.post('/', async (request, response) => {
 	const validation = publicationDto.safeParse(request.body)
 
