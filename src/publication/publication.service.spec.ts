@@ -13,3 +13,17 @@ describe('CREATE /api/publication', () => {
 		expect(testPublication.description).toEqual('testDescription')
 	})
 })
+
+describe('PUT /api/publication/:id', () => {
+	const publicationService = new PublicationService()
+
+	it('should update a publication', async () => {
+		const testPublication = await publicationService.update({
+			id: 8,
+			title: 'newTitle',
+			description: 'newDescription'
+		})
+		expect(testPublication.title).toEqual('newTitle')
+		expect(testPublication.description).toEqual('newDescription')
+	})
+})
