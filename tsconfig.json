@@ -1,13 +1,24 @@
 {
 	"compilerOptions": {
-		"target": "ES2020",
+		"target": "ES2021",
 		"module": "commonjs",
 		"strict": true,
+		"incremental": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
+		"noImplicitAny": false,
+		"removeComments": true,
+		"strictBindCallApply": false,
 		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
 		"outDir": "./dist",
-		"rootDir": "./src"
+		"rootDir": "./src",
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["src/*"],
+			"@/publication/*": ["src/publication/*"],
+			"@/utils/*": ["src/utils/*"]
+		}
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules", "**/*.test.ts"]
