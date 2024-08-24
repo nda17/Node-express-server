@@ -4,12 +4,14 @@ import { PrismaClient } from '@prisma/client'
 import 'colors'
 import dotenv from 'dotenv'
 import express from 'express'
+import helmet from 'helmet'
 
 dotenv.config()
 const app = express()
 const prisma = new PrismaClient()
 
 const main = async () => {
+	app.use(helmet())
 	app.use(logger)
 	app.use(express.json())
 	app.use('/api', publicationRouter)
