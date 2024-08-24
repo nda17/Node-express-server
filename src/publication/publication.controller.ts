@@ -23,16 +23,22 @@ router.post('/', async (request, response) => {
 	response.status(200).json(publication)
 })
 
-router.put('/', async (request, response) => {
+router.put('/:id', async (request, response) => {
 	const validation = publicationDto.safeParse(request.body)
 
 	if (!validation.success) {
 		return response.status(400).json({ message: validation.error.errors })
 	}
 
-	const publication = await publicationService.update(request.body)
+	await publicationService.update(request.body)
 
-	response.status(200).json(publication)
+	response.status(200).json({ message: 'Success' })
+})
+
+router.delete('/:id', async (request, response) => {
+	await publicationService.delete(request.body)
+
+	response.status(200).json({ message: 'Success' })
 })
 
 export const publicationRouter = router
