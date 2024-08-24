@@ -1,10 +1,12 @@
-import { IPublication } from './publication.types'
-
-const prisma = new PrismaClient()
+import { IPublication } from '@/publication/publication.types'
+import { PrismaClient, Publication } from '@prisma/client'
 
 export class PublicationService {
-	createPublication({ publication }: IPublication): Publication {
-		//Saving a publication to a database
-		return publication
+	private prisma = new PrismaClient()
+
+	createPublication(publication: IPublication): Promise<Publication> {
+		return this.prisma.publication.create({
+			data: publication
+		})
 	}
 }
