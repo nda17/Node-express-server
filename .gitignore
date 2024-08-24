@@ -2,12 +2,19 @@
 
 # dependencies
 /node_modules
+/dist
 /.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-/coverage
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
 # next.js
 /.next/
@@ -26,8 +33,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.DS_Store
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
@@ -35,3 +46,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
