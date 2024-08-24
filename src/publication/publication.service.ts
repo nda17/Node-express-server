@@ -37,7 +37,20 @@ export class PublicationService {
 			})
 		} catch (error) {
 			console.error(error)
-			throw new Error('Publication not found')
+			throw new Error('Error updating publication')
+		}
+	}
+
+	async delete(request: IPublication) {
+		try {
+			return this.prisma.publication.delete({
+				where: {
+					id: request.id
+				}
+			})
+		} catch (error) {
+			console.error(error)
+			throw new Error('Error when deleting publication')
 		}
 	}
 }
