@@ -17,9 +17,7 @@ router.post('/', async (request, response) => {
 		return response.status(400).json({ message: validation.error.errors })
 	}
 
-	const publication = await publicationService.createPublication(
-		request.body
-	)
+	const publication = await publicationService.create(request.body)
 
 	response.status(200).json(publication)
 })
