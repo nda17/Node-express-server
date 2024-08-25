@@ -49,6 +49,21 @@ Added unit tests (Jest) for testing CREATE and PUT requests
 
 ---
 
+## _Adding personal settings to the .env environment variable:_
+
+- PORT = 4200
+
+_DEVELOPMENT mode or PRODUCTION mode (select one mode):_
+
+- NODE_ENV = production
+- NODE_ENV = development
+
+_Path to database:_
+
+- DATABASE_URL = postgresql://postgres:postgres@localhost:5432/blog?schema=public
+
+---
+
 ## _Compiles and minifies for production:_
 
 - pnpm run build
